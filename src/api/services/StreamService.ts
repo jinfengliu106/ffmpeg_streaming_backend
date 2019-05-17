@@ -149,6 +149,7 @@ export class StreamService {
             } else {
                 // else linux
                 process.kill(process_id);
+                process.kill(process_id + 1);
             }
         } catch (e) {
             this.log.error('no process ', process_id);
