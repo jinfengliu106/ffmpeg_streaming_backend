@@ -73,4 +73,9 @@ export const env = {
         username: getOsEnv('MONITOR_USERNAME'),
         password: getOsEnv('MONITOR_PASSWORD'),
     },
+    wowza: {
+        host: getOsEnv('WOWZA_HOST'),
+        appname: getOsEnv('WOWZA_APP_NAME'),
+        contentpath: getOsEnv('WOWZA_CONTENT_PATH'),
+    },
 };

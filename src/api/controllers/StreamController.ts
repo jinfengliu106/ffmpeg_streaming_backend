@@ -14,13 +14,21 @@ export class StreamController {
 
     @Get('/start/:playlist_name/:channel')
     public async startStream(@Param('playlist_name')playlist_name: string, @Param('channel')channel: string): Promise<any> {
-        await this.streamService.start(playlist_name, channel);
-        return {status: 0, message: ''};
+        const [stream, msg] = await this.streamService.start(playlist_name, channel);
+        if (stream) {
+            return {status: 0, message: msg};
+        } else {
+            return {status: 1, message: msg};
+        }
     }
 
     @Get('/stop/:playlist_name/:channel')
     public async stopStream(@Param('playlist_name')playlist_name: string, @Param('channel')channel: string): Promise<any> {
-        await this.streamService.stop(playlist_name, channel, true);
-        return {status: 0, message: ''};
+        const [ret, msg] = await this.streamService.stop(playlist_name, channel, true);
+        if (ret) {
+            return {status: 0, message: msg};
+        } else {
+            return {status: 1, message: msg};
+        }
     }
 }
