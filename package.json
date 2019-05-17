@@ -59,6 +59,7 @@
     "graphql": "14.0.2",
     "helmet": "^3.9.0",
     "jsonfile": "5.0.0",
+    "mariadb": "^2.0.5",
     "microframework-w3tec": "^0.6.3",
     "morgan": "^1.9.0",
     "mysql": "^2.17.1",
